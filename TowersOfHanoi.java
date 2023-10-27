@@ -5,18 +5,32 @@ public class TowersOfHanoi {
     }
 
     public static void towersOfHanoi(int stackHeight, char startPeg, char destPeg, char tempPeg) {
-        // base case
-        if (stackHeight == 1) {
-            // move disk from startPeg to endPeg
-            System.out.printf("Move Disk 1 from Peg %c to Peg %c\n", startPeg, destPeg);
-            return;
-        } else {
-            // recursive step
-            // move disk from startPeg to tempPeg
+        
+        if (stackHeight > 0) {
+            /* Move disk to temp peg */
             towersOfHanoi(stackHeight - 1, startPeg, tempPeg, destPeg);
+
             System.out.printf("Move Disk %d from Peg %c to Peg %c\n",stackHeight, startPeg, destPeg);
+
+            /* Move disk from temp peg to dest peg */
             towersOfHanoi(stackHeight - 1, tempPeg, destPeg, startPeg);
+
         }
 
     }
+
+        
+        
+//    public static void moveDisk(int n, int from, int to, int temp) throws InterruptedException{
+  //      if (n > 0) {
+    //        moveDisk (n-1, from, temp, to);
+      //      System.out.println ("move disk " + n + " from peg " + from + " to peg " + to);
+//
+  //          Thread.sleep(1000);
+    //        moveDisk(n-1, temp, to, from);
+      //  }
+        
+    //}
+            
+            
 }
